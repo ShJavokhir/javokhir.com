@@ -1,8 +1,8 @@
-import Head from "next/head";
 import Link from "next/link";
 import { GetStaticProps } from "next";
 import { getAllPosts, PostMeta } from "@/lib/blog";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { SEO } from "@/components/SEO";
 
 interface Props {
   posts: PostMeta[];
@@ -11,13 +11,11 @@ interface Props {
 export default function Blog({ posts }: Props) {
   return (
     <div>
-      <Head>
-        <title>Blog — Javokhir Shomuratov</title>
-        <meta
-          name="description"
-          content="Thoughts on building products, engineering, and lessons learned."
-        />
-      </Head>
+      <SEO
+        title="Blog"
+        description="Thoughts on building products, engineering, and lessons learned."
+        path="/blog"
+      />
 
       <main className="min-h-screen bg-page-bg text-text-primary">
         <div className="mx-auto max-w-3xl px-6 py-20">

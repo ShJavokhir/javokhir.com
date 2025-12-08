@@ -1,0 +1,6 @@
+# robots.txt for javokhir.com
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://javokhir.com/sitemap.xml

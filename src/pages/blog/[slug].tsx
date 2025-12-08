@@ -1,9 +1,11 @@
-import Head from "next/head";
 import Link from "next/link";
 import { GetStaticProps, GetStaticPaths } from "next";
 import ReactMarkdown from "react-markdown";
 import { getAllSlugs, getPostBySlug, Post } from "@/lib/blog";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { SEO } from "@/components/SEO";
+import { BlogPostJsonLd } from "@/components/JsonLd";
+import { SITE_DESCRIPTION } from "@/lib/seo";
 
 interface Props {
   post: Post;
@@ -12,12 +14,19 @@ interface Props {
 export default function BlogPost({ post }: Props) {
   return (
     <div>
-      <Head>
-        <title>{post.title} — Javokhir Shomuratov</title>
-        {post.description && (
-          <meta name="description" content={post.description} />
-        )}
-      </Head>
+      <SEO
+        title={post.title}
+        description={post.description || SITE_DESCRIPTION}
+        path={`/blog/${post.slug}`}
+        type="article"
+        publishedTime={post.date}
+      />
+      <BlogPostJsonLd
+        title={post.title}
+        description={post.description}
+        publishedTime={post.date}
+        slug={post.slug}
+      />
 
       <main className="min-h-screen bg-page-bg text-text-primary">
         <article className="mx-auto max-w-3xl px-6 py-20">

@@ -1,17 +1,17 @@
-import Head from "next/head";
 import Link from "next/link";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { SEO } from "@/components/SEO";
+import { PersonJsonLd, WebsiteJsonLd } from "@/components/JsonLd";
 
 export default function Home() {
   return (
     <div>
-      <Head>
-        <title>Javokhir Shomuratov</title>
-        {/* <meta
-          name="description"
-          content="Personal home page of Javokhir — a concise introduction and short biography."
-        /> */}
-      </Head>
+      <SEO
+        path=""
+        description="Developer based in the Bay Area, CA. Building tech products that make a difference. Co-founder of Examy, now building Raisedash."
+      />
+      <PersonJsonLd />
+      <WebsiteJsonLd />
 
       <main className="min-h-screen bg-page-bg text-text-primary">
         <div className="mx-auto max-w-3xl px-6 py-20">
@@ -35,7 +35,7 @@ export default function Home() {
               Javokhir Sh.
             </h1>
             <p className="max-w-2xl text-lg leading-relaxed text-text-body">
-              I'm a developer based in the Bay Area, CA. I love building tech products that make a difference. I previously co-founded
+              I&apos;m a developer based in the Bay Area, CA. I love building tech products that make a difference. I previously co-founded
               <a
                 href="https://examy.me"
                 className="mx-1 whitespace-nowrap underline decoration-link-underline/70 underline-offset-4 transition hover:decoration-link-underline-hover"
