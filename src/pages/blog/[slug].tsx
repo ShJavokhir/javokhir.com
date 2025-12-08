@@ -3,6 +3,7 @@ import Link from "next/link";
 import { GetStaticProps, GetStaticPaths } from "next";
 import ReactMarkdown from "react-markdown";
 import { getAllSlugs, getPostBySlug, Post } from "@/lib/blog";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 interface Props {
   post: Post;
@@ -18,17 +19,28 @@ export default function BlogPost({ post }: Props) {
         )}
       </Head>
 
-      <main className="min-h-screen bg-[#f8f5f0] text-[#1f1d1a]">
+      <main className="min-h-screen bg-page-bg text-text-primary">
         <article className="mx-auto max-w-3xl px-6 py-20">
           <header className="mb-12">
-            <Link
-              href="/blog"
-              className="text-sm text-[#3c3832]/60 underline decoration-[#c3bfb7]/50 underline-offset-4 transition hover:text-[#3c3832] hover:decoration-[#a79f95]"
-            >
-              ← Blog
-            </Link>
-            <h1 className="mt-6 text-4xl text-[#1c1a17]">{post.title}</h1>
-            <time className="mt-3 block text-sm text-[#3c3832]/60">
+            <nav className="flex items-center gap-6 text-sm">
+              <Link
+                href="/"
+                className="text-text-muted underline decoration-transparent underline-offset-4 transition hover:text-text-body hover:decoration-link-underline"
+              >
+                Home
+              </Link>
+              <Link
+                href="/blog"
+                className="text-text-body underline decoration-link-underline underline-offset-4 transition hover:decoration-link-underline-hover"
+              >
+                Blog
+              </Link>
+              <span className="ml-auto">
+                <ThemeToggle />
+              </span>
+            </nav>
+            <h1 className="mt-6 text-4xl text-text-primary">{post.title}</h1>
+            <time className="mt-4 block text-sm text-text-muted">
               {formatDate(post.date)}
             </time>
           </header>
