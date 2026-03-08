@@ -11,6 +11,7 @@
   --text-muted: rgba(60, 56, 50, 0.6);
   --link-underline: #c3bfb7;
   --link-underline-hover: #a79f95;
+  --card-surface: #ffffff;
   --code-bg: #e8e4dc;
   --pre-bg: #1c1a17;
   --pre-text: #f8f5f0;
@@ -57,6 +58,7 @@
   --color-text-muted: var(--text-muted);
   --color-link-underline: var(--link-underline);
   --color-link-underline-hover: var(--link-underline-hover);
+  --color-card-surface: var(--card-surface);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -119,6 +121,7 @@ html.dark {
   --text-muted: rgba(212, 208, 200, 0.6);
   --link-underline: #5c5750;
   --link-underline-hover: #7c7770;
+  --card-surface: #262320;
   --code-bg: #2c2a27;
   --pre-bg: #0c0a07;
   --pre-text: #f5f2ed;

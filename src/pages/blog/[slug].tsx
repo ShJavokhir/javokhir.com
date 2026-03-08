@@ -44,6 +44,12 @@ export default function BlogPost({ post }: Props) {
               >
                 Blog
               </Link>
+              <Link
+                href="/quotes"
+                className="text-text-muted underline decoration-transparent underline-offset-4 transition hover:text-text-body hover:decoration-link-underline"
+              >
+                Quotes
+              </Link>
               <span className="ml-auto">
                 <ThemeToggle />
               </span>

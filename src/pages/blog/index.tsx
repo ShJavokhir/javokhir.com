@@ -30,6 +30,12 @@ export default function Blog({ posts }: Props) {
               <span className="text-text-body underline decoration-link-underline underline-offset-4">
                 Blog
               </span>
+              <Link
+                href="/quotes"
+                className="text-text-muted underline decoration-transparent underline-offset-4 transition hover:text-text-body hover:decoration-link-underline"
+              >
+                Quotes
+              </Link>
               <span className="ml-auto">
                 <ThemeToggle />
               </span>
