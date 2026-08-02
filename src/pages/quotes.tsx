@@ -1,8 +1,9 @@
-import Link from "next/link";
 import { GetStaticProps } from "next";
 import { useMemo, useState } from "react";
-import { ThemeToggle } from "@/components/ThemeToggle";
+import { Nav } from "@/components/Nav";
 import { SEO } from "@/components/SEO";
+import { QuotesJsonLd } from "@/components/JsonLd";
+import { formatDisplayDate, toIsoDate } from "@/lib/seo";
 import quotesData from "../../content/quotes.json";
 
 interface Quote {
@@ -15,14 +16,9 @@ interface Props {
   quotes: Quote[];
 }
 
-function formatDate(dateStr: string): string {
-  const date = new Date(dateStr);
-  return date.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  });
-}
+/** Shared by the meta description and the CollectionPage node. */
+const DESCRIPTION =
+  "Quotes Javokhir Shomuratov keeps coming back to — on business, storytelling and decision-making, from Naval Ravikant, Charlie Munger, Alfred Adler and others.";
 
 export default function Quotes({ quotes }: Props) {
   const [selectedAuthor, setSelectedAuthor] = useState<string | null>(null);
@@ -41,38 +37,17 @@ export default function Quotes({ quotes }: Props) {
 
   return (
     <div>
-      <SEO
-        title="Quotes"
-        description="A collection of quotes that inspire me."
-        path="/quotes"
-      />
+      <SEO title="Quotes" description={DESCRIPTION} path="/quotes" />
+      <QuotesJsonLd quotes={quotes} description={DESCRIPTION} />
 
       <main className="min-h-screen bg-page-bg text-text-primary">
         <div className="mx-auto max-w-3xl px-6 py-20">
           <header className="mb-12">
-            <nav className="flex items-center gap-6 text-sm">
-              <Link
-                href="/"
-                className="text-text-muted underline decoration-transparent underline-offset-4 transition hover:text-text-body hover:decoration-link-underline"
-              >
-                Home
-              </Link>
-              <Link
-                href="/blog"
-                className="text-text-muted underline decoration-transparent underline-offset-4 transition hover:text-text-body hover:decoration-link-underline"
-              >
-                Blog
-              </Link>
-              <span className="text-text-body underline decoration-link-underline underline-offset-4">
-                Quotes
-              </span>
-              <span className="ml-auto">
-                <ThemeToggle />
-              </span>
-            </nav>
+            <Nav current="/quotes" />
             <h1 className="mt-6 text-4xl text-text-primary">Quotes</h1>
             <p className="mt-3 text-text-muted">
-              These are some of my favorite quotes from others. Pharaphrasing may be different from the original quote.
+              These are some of my favorite quotes from others. Paraphrasing may
+              differ from the original wording.
             </p>
           </header>
 
@@ -111,9 +86,12 @@ export default function Quotes({ quotes }: Props) {
                 <figcaption className="mt-3 text-sm text-text-muted">
                   {quote.author}
                 </figcaption>
-                <span className="pointer-events-none absolute right-3 top-3 rounded bg-page-bg px-2 py-0.5 text-xs text-text-muted opacity-0 transition-opacity group-hover:opacity-100">
-                  {formatDate(quote.addedDate)}
-                </span>
+                <time
+                  dateTime={toIsoDate(quote.addedDate)}
+                  className="pointer-events-none absolute right-3 top-3 rounded bg-page-bg px-2 py-0.5 text-xs text-text-muted opacity-0 transition-opacity group-hover:opacity-100"
+                >
+                  {formatDisplayDate(quote.addedDate, "short")}
+                </time>
               </figure>
             ))}
           </div>

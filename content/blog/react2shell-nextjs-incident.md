@@ -1,6 +1,6 @@
 ---
 title: "React2Shell in action"
-date: "12-09-2025"
+date: "2025-12-09"
 description: "How my small Next.js side project got hit by the React2Shell (CVE-2025-55182) vulnerability and what I learned from cleaning it up."
 ---
 

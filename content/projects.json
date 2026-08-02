@@ -1,0 +1,145 @@
+[
+  {
+    "name": "joinedanthropic.com",
+    "url": "https://joinedanthropic.com",
+    "period": "Jul 2026",
+    "description": [
+      "Fun weekend project. We were curious which company YC founders actually choose to work at: OpenAI or Anthropic.",
+      "The answer is a Sankey diagram."
+    ],
+    "collaborators": ["Oscar Hong"],
+    "images": [
+      {
+        "src": "/projects/joinedanthropic-sankey.webp",
+        "alt": "Sankey diagram showing where YC founders work now, OpenAI 70 vs Anthropic 35",
+        "width": 1400,
+        "height": 1030
+      }
+    ]
+  },
+  {
+    "name": "Quant Alpha",
+    "period": "Jun 2026",
+    "note": "Open source",
+    "description": [
+      "A self-improving quant researcher agent that autonomously finds new alphas and retires decayed ones over time.",
+      "Evaluation logic is deterministic in quantitative trading, which makes it easy to see whether the agent is actually improving over time.",
+      "Self-evolving systems are interesting to me because almost no human intervention is needed for the system to learn, execute, and reflect.",
+      "Built at the AI Engineer World's Fair Hackathon hosted by Cerebral Valley."
+    ],
+    "collaborators": ["Guangting Yu", "Aneesh Durai"],
+    "images": [
+      {
+        "src": "/projects/quant-alpha-dashboard.webp",
+        "alt": "Dashboard showing the living fleet of alphas and the research log of births, deaths, and rejections",
+        "width": 1400,
+        "height": 867
+      },
+      {
+        "src": "/projects/quant-alpha-backtest.webp",
+        "alt": "Backtest view of a single alpha with equity curve, Sharpe, and drawdown",
+        "width": 1400,
+        "height": 843
+      }
+    ]
+  },
+  {
+    "name": "startups.rip",
+    "url": "https://startups.rip",
+    "period": "Nov 2025",
+    "description": [
+      "Built at AgentMail's HackHalloween. Took 1st in the Summoners track and 3rd grand prize overall."
+    ],
+    "collaborators": ["Oscar Hong", "Alessandro Duico", "Sai Krishna"]
+  },
+  {
+    "name": "Examy",
+    "url": "https://examy.me",
+    "period": "Previously",
+    "description": [
+      "Co-founded."
+    ]
+  },
+  {
+    "name": "PTI2Go",
+    "note": "iOS & Android",
+    "description": [
+      "A pre-trip inspection companion for truckers. No more fumbling with paperwork and cumbersome PTI checklist forms — one checklist at a time.",
+      "Built, shipped, and live on the App Store and Play Store in less than a week."
+    ],
+    "images": [
+      {
+        "src": "/projects/pti2go-screens.webp",
+        "alt": "PTI2Go App Store screenshots showing the home screen and a pre-trip inspection checklist",
+        "width": 1400,
+        "height": 865
+      },
+      {
+        "src": "/projects/pti2go-appstore.webp",
+        "alt": "PTI2Go listing on the App Store",
+        "width": 1400,
+        "height": 575
+      }
+    ]
+  },
+  {
+    "name": "Whois domain name finder",
+    "period": "Aug 2021 – Sep 2021",
+    "note": "Open source",
+    "description": [
+      "A tool for finding premium domains. It watches domain status continuously and pings you on Telegram (and elsewhere) the moment one frees up.",
+      "It can also hunt by length — 2- and 3-letter domains are the premium ones, so it keeps searching for those and tells you when one becomes available."
+    ]
+  },
+  {
+    "name": "Don't waste",
+    "url": "https://www.youtube.com/watch?v=8zXkyMKoto8",
+    "description": [
+      "A B2C app that cuts food waste at local businesses — restaurants, cafés, and bakeries. Nearby surplus food shows up on a map, either discounted or free."
+    ],
+    "images": [
+      {
+        "src": "/projects/dont-waste-map.webp",
+        "alt": "Don't waste app showing nearby surplus food on a map of Tashkent",
+        "width": 270,
+        "height": 480
+      }
+    ]
+  },
+  {
+    "name": "Online quiz system",
+    "url": "http://delux.uz",
+    "period": "Jan 2016 – Jan 2017",
+    "description": [
+      "Anyone could build their own quiz and share it — especially handy for teachers assessing their students.",
+      "I wrote it in PHP at 14–15, after learning the language in a week. The code is not great and I know there are bugs and vulnerabilities in there. I'm not going to fix them; I'm busy now :((",
+      "Still, it was my first \"big\" project, and it took 1st place at a contest called O'quvchi yoshlar media festivali."
+    ],
+    "images": [
+      {
+        "src": "/projects/delux-home.webp",
+        "alt": "Delux.uz home page listing general quiz results",
+        "width": 1400,
+        "height": 922
+      },
+      {
+        "src": "/projects/delux-features.webp",
+        "alt": "Delux.uz features section explaining how the platform works",
+        "width": 1400,
+        "height": 939
+      },
+      {
+        "src": "/projects/delux-quiz.webp",
+        "alt": "Taking a quiz on Delux.uz, one question at a time",
+        "width": 1400,
+        "height": 671
+      },
+      {
+        "src": "/projects/delux-lessons.webp",
+        "alt": "Delux.uz lessons section grouped by subject",
+        "width": 800,
+        "height": 557
+      }
+    ]
+  }
+]

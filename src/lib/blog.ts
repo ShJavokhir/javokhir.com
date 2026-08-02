@@ -1,8 +1,21 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { toIsoDate } from "@/lib/seo";
 
 const POSTS_DIR = path.join(process.cwd(), "content/blog");
+
+/**
+ * Frontmatter dates are hand-written (and YAML may hand back a Date), so they
+ * are normalised to YYYY-MM-DD once, here. Everything downstream —
+ * `article:published_time`, `datePublished`, sitemap `lastmod`, and the
+ * newest-first sort — depends on that being machine-readable.
+ */
+function readDate(value: unknown): string {
+  if (value instanceof Date) return value.toISOString().slice(0, 10);
+  if (typeof value === "string") return toIsoDate(value) ?? "";
+  return "";
+}
 
 export interface PostMeta {
   slug: string;
@@ -32,7 +45,7 @@ export function getAllPosts(): PostMeta[] {
       return {
         slug,
         title: data.title || slug,
-        date: data.date || "",
+        date: readDate(data.date),
         description: data.description,
       };
     })
@@ -54,7 +67,7 @@ export function getPostBySlug(slug: string): Post | null {
   return {
     slug,
     title: data.title || slug,
-    date: data.date || "",
+    date: readDate(data.date),
     description: data.description,
     content,
   };

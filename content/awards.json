@@ -1,0 +1,169 @@
+[
+  {
+    "name": "HackTheStackathon @ Y Combinator",
+    "placement": "1st place",
+    "medal": "🥇",
+    "issuer": "YC, Firecrawl, Resend, Reducto",
+    "date": "Feb 2026",
+    "team": ["Mark Morgan", "Oscar Hong"],
+    "links": [
+      {
+        "label": "Winners announcement",
+        "url": "https://www.youtube.com/watch?v=AUtREYLx9IA"
+      }
+    ],
+    "images": [
+      {
+        "src": "/awards/hackthestackathon-yc-winners.webp",
+        "alt": "Javokhir Shomuratov with teammates Mark Morgan and Oscar Hong in front of the Y Combinator sign after winning HackTheStackathon",
+        "width": 1280,
+        "height": 918
+      }
+    ]
+  },
+  {
+    "name": "Odyssey-2 Pro Hackathon",
+    "placement": "1st place",
+    "medal": "🥇",
+    "issuer": "OdysseyML",
+    "date": "Feb 2026",
+    "team": ["Oscar Hong", "Mark Morgan"],
+    "links": [{ "label": "odyssey.ml", "url": "https://odyssey.ml" }],
+    "images": [
+      {
+        "src": "/awards/odyssey-2-pro-odysseyml-team.webp",
+        "alt": "Javokhir Shomuratov and teammates holding the $25,000 Odyssey-2 Pro Hackathon winners' check with the OdysseyML team — Soleio, Oliver Cameron and Kristy McDonough",
+        "width": 1400,
+        "height": 933
+      },
+      {
+        "src": "/awards/odyssey-2-pro-team.webp",
+        "alt": "Oscar Hong, Mark Morgan and Javokhir Shomuratov holding the $25,000 Odyssey-2 Pro Hackathon winners' check in Menlo Park",
+        "width": 720,
+        "height": 1280
+      }
+    ]
+  },
+  {
+    "name": "MongoDB Agentic Orchestration Hackathon",
+    "placement": "1st place",
+    "medal": "🥇",
+    "issuer": "MongoDB, NVIDIA, Vercel, Fireworks AI, Coinbase, Thesys, Augment Code",
+    "date": "Jan 2026",
+    "project": "JustPrice",
+    "note": "Announced by MongoDB x Cerebral Valley.",
+    "team": ["Oscar Hong"],
+    "images": [
+      {
+        "src": "/awards/mongodb-hackathon-winners.webp",
+        "alt": "Oscar Hong and Javokhir Shomuratov holding their trophies as MongoDB x Cerebral Valley hackathon winners with JustPrice",
+        "width": 1064,
+        "height": 1280
+      },
+      {
+        "src": "/awards/mongodb-hackathon-finalists-stage.webp",
+        "alt": "JustPrice on stage among the top three finalists at the MongoDB Agentic Orchestration Hackathon",
+        "width": 720,
+        "height": 1280
+      }
+    ]
+  },
+  {
+    "name": "AgentMail's HackHalloween",
+    "placement": "1st in the Summoners track, 3rd grand prize",
+    "medal": "🥇",
+    "issuer": "Y Combinator & AgentMail",
+    "date": "Nov 2025",
+    "project": "startups.rip",
+    "team": ["Oscar Hong", "Alessandro Duico", "Sai Krishna"],
+    "links": [{ "label": "startups.rip", "url": "https://startups.rip" }],
+    "images": [
+      {
+        "src": "/awards/hackhalloween-team.webp",
+        "alt": "Oscar Hong, Javokhir Shomuratov and Alessandro Duico building startups.rip at AgentMail's HackHalloween",
+        "width": 1400,
+        "height": 1050
+      },
+      {
+        "src": "/awards/hackhalloween-track-winner-trophy.webp",
+        "alt": "Alessandro Duico, Oscar Hong, Sai Krishna and Javokhir Shomuratov holding the AgentMail Summoners track winner trophy at Y Combinator",
+        "width": 1400,
+        "height": 1050
+      }
+    ]
+  },
+  {
+    "name": "Build MCP Agents — with Docker, Groq, and E2B",
+    "placement": "1st place",
+    "medal": "🥇",
+    "issuer": "Docker, Groq & E2B",
+    "date": "Nov 2025",
+    "project": "PatentsWithCode",
+    "team": ["Oscar Hong", "Julaiti Alafate"],
+    "links": [{ "label": "Event page", "url": "https://luma.com/0vm36r4q?tk=MGLPoI" }],
+    "images": [
+      {
+        "src": "/awards/build-mcp-agents-team.webp",
+        "alt": "Javokhir Shomuratov, Oscar Hong and Julaiti Alafate, the PatentsWithCode team at the Build MCP Agents hackathon",
+        "width": 720,
+        "height": 1280
+      }
+    ]
+  },
+  {
+    "name": "Hack FLUX: Beyond One",
+    "placement": "2nd place",
+    "medal": "🥈",
+    "issuer": "Black Forest Labs, NVIDIA, fal.ai, Anthropic",
+    "date": "Nov 2025",
+    "team": ["Oscar Hong", "Julaiti Alafate"],
+    "images": [
+      {
+        "src": "/awards/hack-flux-fal-ceo.webp",
+        "alt": "Oscar Hong and Javokhir Shomuratov with Burkay Gur, co-founder and CEO of fal.ai, at Hack FLUX: Beyond One",
+        "width": 1400,
+        "height": 788
+      },
+      {
+        "src": "/awards/hack-flux-organizers.webp",
+        "alt": "Javokhir Shomuratov and his team with the Hack FLUX: Beyond One organizers in front of the Black Forest Labs stage",
+        "width": 1400,
+        "height": 935
+      }
+    ]
+  },
+  {
+    "name": "Supabase Select 2025",
+    "placement": "Datadog track winner",
+    "medal": "🏆",
+    "issuer": "Datadog",
+    "date": "Oct 2025",
+    "team": ["Mark Morgan", "Oscar Hong"],
+    "images": [
+      {
+        "src": "/awards/supabase-select-datadog-track.webp",
+        "alt": "Javokhir Shomuratov with teammates Mark Morgan and Oscar Hong, and Maxi Rodriguez of Datadog, after winning the Datadog track at Supabase Select 2025",
+        "width": 720,
+        "height": 1280
+      }
+    ]
+  },
+  {
+    "name": "The Global Best M-Gov Award",
+    "placement": "2nd place worldwide",
+    "medal": "🥈",
+    "issuer": "UAE Government",
+    "date": "Feb 2023",
+    "project": "Don't waste",
+    "note": "Judged against more than 1,000 teams from 60+ countries, with a mobile app that cuts food waste.",
+    "links": [{ "label": "Sources", "url": "https://pastebin.com/T5qLpU9z" }],
+    "images": [
+      {
+        "src": "/awards/global-best-mgov-award.webp",
+        "alt": "The Don't Waste team from INHA University in Tashkent, Uzbekistan receiving the Global Best M-Gov Award from Egyptian President Abdel Fattah El-Sisi",
+        "width": 1400,
+        "height": 931
+      }
+    ]
+  }
+]
