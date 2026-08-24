@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Nav } from "@/components/Nav";
 import { SEO } from "@/components/SEO";
 import { AwardsJsonLd } from "@/components/JsonLd";
-import { SITE_URL, toIsoMonth } from "@/lib/seo";
+import { SITE_URL, outboundRel, toIsoMonth } from "@/lib/seo";
 import awardsData from "../../content/awards.json";
 
 interface Photo {
@@ -129,7 +129,7 @@ function AwardEntry({ award, first }: { award: Award; first: boolean }) {
               <a
                 href={link.url}
                 target="_blank"
-                rel="noreferrer"
+                rel={outboundRel(link.url)}
                 className={`text-text-body ${linkClass}`}
               >
                 {link.label}
@@ -164,7 +164,7 @@ export default function Awards({ awards }: Props) {
             <Nav current="/awards" />
             <h1 className="mt-6 text-4xl text-text-primary">Awards</h1>
             <p className="mt-3 text-text-muted">
-              13x hackathon / coding contest winner. I still think it&apos;s luck
+              13x hackathon / coding contest winner. I still think the role of luck is huge
               and anyone can do it. The recent ones:
             </p>
           </header>

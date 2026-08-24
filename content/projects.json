@@ -1,5 +1,57 @@
 [
   {
+    "name": "YC World",
+    "url": "https://city.javokhir.com",
+    "period": "Aug 2026",
+    "description": [
+      "What if Y Combinator was a city?",
+      "Every company ever funded as a place you can walk. Districts are categories, building height is team size, pedestrians are real founders and they'll stop to say hi."
+    ],
+    "images": [
+      {
+        "src": "/projects/yc-world-city.webp",
+        "alt": "YC World seen from above, every funded company a building and each district a category",
+        "width": 1400,
+        "height": 753
+      },
+      {
+        "src": "/projects/yc-world-founder.webp",
+        "alt": "Walking up to Patrick Collison on a street in YC World, who waves hello",
+        "width": 1400,
+        "height": 756
+      },
+      {
+        "src": "/projects/yc-world-night.webp",
+        "alt": "YC World at night, with beams of light marking unicorns like Stripe, Coinbase and Brex",
+        "width": 1400,
+        "height": 752
+      }
+    ]
+  },
+  {
+    "name": "YC Atlas",
+    "url": "https://yc.javokhir.com",
+    "period": "Jul 2026",
+    "description": [
+      "I researched all 6,077 YC startups. I wanted to know: do these startups share anything in common? And how have trends shifted over time?",
+      "Every launched Y Combinator company, embedded by what it actually does and projected onto a single map, so neighbours build similar things. Describe your own idea and it finds the nearest ones — who they are, when YC funded them, and how many survived."
+    ],
+    "images": [
+      {
+        "src": "/projects/yc-atlas-map.webp",
+        "alt": "YC Atlas map of all 6,077 Y Combinator companies, clustered by what they do",
+        "width": 1400,
+        "height": 1009
+      },
+      {
+        "src": "/projects/yc-atlas-cluster-trends.webp",
+        "alt": "Semantic cluster trends chart showing Investing & crypto falling from 6% of 2022 batches to 2% of 2026",
+        "width": 1200,
+        "height": 1318
+      }
+    ]
+  },
+  {
     "name": "joinedanthropic.com",
     "url": "https://joinedanthropic.com",
     "period": "Jul 2026",
@@ -14,6 +66,25 @@
         "alt": "Sankey diagram showing where YC founders work now, OpenAI 70 vs Anthropic 35",
         "width": 1400,
         "height": 1030
+      }
+    ]
+  },
+  {
+    "name": "GoldCall — The AI Sales Gym",
+    "url": "https://apps.apple.com/us/app/goldcall-the-ai-sales-gym/id6775288769",
+    "period": "Jun 2026",
+    "note": "iOS",
+    "description": [
+      "A gym for cold calls. You call an AI prospect that talks back and stays in character the whole way through — skeptical, too busy, stalling, pushing back on every point — and difficulty runs from easy to brutal.",
+      "When you hang up, an AI coach scores the call across five sales skills, flags the moments worth reviewing, and shows you the line you should have said instead.",
+      "Cold calling, discovery, objections, negotiation, closing, gatekeepers, and voicemail practice — no roleplay partner to schedule and no one watching you fumble."
+    ],
+    "images": [
+      {
+        "src": "/projects/goldcall-screens.webp",
+        "alt": "GoldCall App Store screenshots showing the home screen, AI leads to cold call, a scored call breakdown, and feedback with better lines to say",
+        "width": 1400,
+        "height": 715
       }
     ]
   },

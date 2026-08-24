@@ -8,6 +8,10 @@
     "authors": ["Nassim Nicholas Taleb"]
   },
   {
+    "title": "The Black Swan",
+    "authors": ["Nassim Nicholas Taleb"]
+  },
+  {
     "title": "The Mom Test",
     "authors": ["Rob Fitzpatrick"]
   },
@@ -30,5 +34,13 @@
   {
     "title": "Deep Work",
     "authors": ["Cal Newport"]
+  },
+  {
+    "title": "The Lean Startup",
+    "authors": ["Eric Ries"]
+  },
+  {
+    "title": "Meditations",
+    "authors": ["Marcus Aurelius"]
   }
 ]

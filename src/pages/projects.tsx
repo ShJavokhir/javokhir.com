@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Nav } from "@/components/Nav";
 import { SEO } from "@/components/SEO";
 import { ProjectsJsonLd } from "@/components/JsonLd";
-import { toIsoMonth } from "@/lib/seo";
+import { outboundRel, toIsoMonth } from "@/lib/seo";
 import projectsData from "../../content/projects.json";
 
 interface Screenshot {
@@ -30,7 +30,7 @@ interface Props {
 
 /** Shared by the meta description and the CollectionPage node. */
 const DESCRIPTION =
-  "Projects built by Javokhir Shomuratov — Quant Alpha, a self-improving quant research agent, joinedanthropic.com, startups.rip, PTI2Go and more.";
+  "Projects built by Javokhir Shomuratov — YC World, Y Combinator as a city you can walk, YC Atlas, GoldCall, Quant Alpha, joinedanthropic.com, startups.rip and more.";
 
 function formatList(names: string[]): string {
   if (names.length === 1) return names[0];
@@ -82,7 +82,7 @@ function ProjectEntry({ project, first }: { project: Project; first: boolean }) 
             <a
               href={project.url}
               target="_blank"
-              rel="noreferrer"
+              rel={outboundRel(project.url)}
               className="underline decoration-link-underline/70 underline-offset-4 transition hover:decoration-link-underline-hover"
             >
               {project.name}

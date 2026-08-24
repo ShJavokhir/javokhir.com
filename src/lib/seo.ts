@@ -2,7 +2,7 @@ export const SITE_URL = "https://javokhir.com";
 export const SITE_NAME = "Javokhir Shomuratov";
 export const SITE_DESCRIPTION =
   "Founder at Raisedash. 10+ years in tech, based in the SF Bay Area. Generalist by choice, 13x hackathon winner.";
-export const TWITTER_HANDLE = "@javokhir_sh";
+export const TWITTER_HANDLE = "@_javokhir";
 export const EMAIL = "hi@javokhir.com";
 export const LOCALE = "en-US";
 
@@ -20,9 +20,10 @@ export interface Section {
 }
 
 /**
- * Every top-level section, most important first. Drives the nav order *and*
- * the sitemap, so crawlers see the same priority the reader does: the awards
- * and projects are the pages worth ranking, quotes are the tail.
+ * Every top-level section, in nav order. Drives the nav *and* the sitemap, so
+ * the two can't drift. Crawl weight rides on each entry's `priority` rather
+ * than its position, so /blog can read last in the nav while still ranking
+ * ahead of /books and /quotes.
  */
 export const SECTIONS: Section[] = [
   { href: "/", label: "Home", changefreq: "weekly", priority: "1.0" },
@@ -33,16 +34,42 @@ export const SECTIONS: Section[] = [
     changefreq: "monthly",
     priority: "0.9",
   },
-  { href: "/blog", label: "Blog", changefreq: "weekly", priority: "0.8" },
   { href: "/books", label: "Books", changefreq: "monthly", priority: "0.5" },
   { href: "/quotes", label: "Quotes", changefreq: "monthly", priority: "0.5" },
+  { href: "/blog", label: "Blog", changefreq: "weekly", priority: "0.8" },
 ];
+
+/**
+ * Hosts that should not receive a ranking signal from here. Kept in one place
+ * so the awards and projects pages can't drift on the policy; subdomains of a
+ * listed host are covered too.
+ */
+const NOFOLLOW_HOSTS = ["startups.rip", "odyssey.ml"];
+
+/**
+ * `rel` for an outbound link. Every external link keeps `noreferrer`;
+ * `nofollow` is added for the hosts above. Relative hrefs (the image
+ * lightboxes) fall through to the plain value.
+ */
+export function outboundRel(url: string): string {
+  let host: string;
+  try {
+    host = new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return "noreferrer";
+  }
+
+  const blocked = NOFOLLOW_HOSTS.some(
+    (candidate) => host === candidate || host.endsWith(`.${candidate}`)
+  );
+  return blocked ? "nofollow noreferrer" : "noreferrer";
+}
 
 /** Single source of truth for outbound profile links (page footer + Person JSON-LD). */
 export const SOCIAL_LINKS = [
-  { label: "X", url: "https://x.com/javokhir_sh" },
-  { label: "GitHub", url: "https://github.com/javokhir" },
-  { label: "LinkedIn", url: "https://linkedin.com/in/javokhir" },
+  { label: "X", url: "https://x.com/_javokhir" },
+  // { label: "GitHub", url: "https://github.com/shjavokhir" },
+  // { label: "LinkedIn", url: "https://linkedin.com/in/javokhir" },
 ];
 
 export interface SEOProps {

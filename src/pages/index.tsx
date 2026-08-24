@@ -61,7 +61,7 @@ export default function Home() {
                 13x hackathon / coding contest winner
               </Link>{" "}
               <span aria-hidden>&#127941;</span>{" "}
-              (I still think it&apos;s luck and anyone can do it)
+              (I still think the role of luck is huge and anyone can do it)
             </Item>
             <Item>W2 history? 3 months at a fast food restaurant</Item>
             <Item>
@@ -78,7 +78,7 @@ export default function Home() {
               Thinking in Bets, The Mom Test, SPIN Selling
             </Item>
             <Item>Hobby? canyon drives, sim racing, hiking, cooking, audiobooks</Item>
-            <Item>&ldquo;Car guy&rdquo; (812, 296 GTB, Senna, GT3 RS)</Item>
+            <Item>&ldquo;Car guy&rdquo; (812, 296 GTB, SF90 XX, Senna, GT3 RS)</Item>
           </ul>
 
           <footer className="mt-14 border-t border-link-underline/40 pt-8">
