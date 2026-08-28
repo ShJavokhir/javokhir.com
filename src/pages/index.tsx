@@ -46,7 +46,6 @@ export default function Home() {
 
           <ul className="mt-10 space-y-3 text-lg leading-relaxed text-text-body">
             <Item>10+ years in tech, based in the SF Bay Area</Item>
-            <Item>Building a startup</Item>
             <Item>
               I design complex, scalable architectures, and I&apos;m a little
               addicted to getting the UI/UX right
