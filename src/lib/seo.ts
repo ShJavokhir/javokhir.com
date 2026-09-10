@@ -14,6 +14,8 @@ export const BLOG_ID = `${SITE_URL}/blog#blog`;
 export interface Section {
   href: string;
   label: string;
+  /** Where the nav shows it: inline, or tucked inside the "Other" menu. */
+  group: "primary" | "more";
   /** Sitemap hints. */
   changefreq: string;
   priority: string;
@@ -21,22 +23,54 @@ export interface Section {
 
 /**
  * Every top-level section, in nav order. Drives the nav *and* the sitemap, so
- * the two can't drift. Crawl weight rides on each entry's `priority` rather
- * than its position, so /blog can read last in the nav while still ranking
- * ahead of /books and /quotes.
+ * the two can't drift. The nav renders the `primary` entries inline and hides
+ * the rest behind "Other"; crawl weight rides on each entry's `priority`
+ * rather than its position or group, so /awards still outranks /blog while
+ * sitting in the menu.
  */
 export const SECTIONS: Section[] = [
-  { href: "/", label: "Home", changefreq: "weekly", priority: "1.0" },
-  { href: "/awards", label: "Awards", changefreq: "monthly", priority: "0.9" },
   {
-    href: "/projects",
-    label: "Projects",
+    href: "/",
+    label: "Home",
+    group: "primary",
+    changefreq: "weekly",
+    priority: "1.0",
+  },
+  {
+    href: "/blog",
+    label: "Writings",
+    group: "primary",
+    changefreq: "weekly",
+    priority: "0.8",
+  },
+  {
+    href: "/awards",
+    label: "Awards",
+    group: "more",
     changefreq: "monthly",
     priority: "0.9",
   },
-  { href: "/books", label: "Books", changefreq: "monthly", priority: "0.5" },
-  { href: "/quotes", label: "Quotes", changefreq: "monthly", priority: "0.5" },
-  { href: "/blog", label: "Blog", changefreq: "weekly", priority: "0.8" },
+  {
+    href: "/projects",
+    label: "Projects",
+    group: "more",
+    changefreq: "monthly",
+    priority: "0.9",
+  },
+  {
+    href: "/books",
+    label: "Books",
+    group: "more",
+    changefreq: "monthly",
+    priority: "0.5",
+  },
+  {
+    href: "/quotes",
+    label: "Quotes",
+    group: "more",
+    changefreq: "monthly",
+    priority: "0.5",
+  },
 ];
 
 /**

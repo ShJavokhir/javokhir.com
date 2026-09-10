@@ -37,7 +37,7 @@ export default function Books({ books }: Props) {
             <Nav current="/books" />
             <h1 className="mt-6 text-4xl text-text-primary">Books</h1>
             <p className="mt-3 text-text-muted">
-              My favorite books.
+              Favorite books I have read.
             </p>
           </header>
 

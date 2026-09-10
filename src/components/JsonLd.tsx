@@ -63,7 +63,7 @@ function blogRef() {
   return {
     "@type": "Blog",
     "@id": BLOG_ID,
-    name: `Blog — ${SITE_NAME}`,
+    name: `Writings — ${SITE_NAME}`,
     url: `${SITE_URL}/blog`,
     isPartOf: { "@id": WEBSITE_ID },
     author: { "@id": PERSON_ID },
@@ -423,7 +423,7 @@ export function BlogJsonLd({ posts, description }: BlogJsonLdProps) {
           "@type": "Blog",
           "@id": BLOG_ID,
           url: `${SITE_URL}/blog`,
-          name: `Blog — ${SITE_NAME}`,
+          name: `Writings — ${SITE_NAME}`,
           description,
           inLanguage: LOCALE,
           isPartOf: { "@id": WEBSITE_ID },
@@ -442,7 +442,7 @@ export function BlogJsonLd({ posts, description }: BlogJsonLdProps) {
             author: { "@id": PERSON_ID },
           })),
         },
-        breadcrumb("/blog", [{ name: "Blog", path: "/blog" }]),
+        breadcrumb("/blog", [{ name: "Writings", path: "/blog" }]),
       ])}
     />
   );
@@ -488,7 +488,7 @@ export function BlogPostJsonLd({
           ...(datePublished && { datePublished, dateModified: datePublished }),
         },
         breadcrumb(`/blog/${slug}`, [
-          { name: "Blog", path: "/blog" },
+          { name: "Writings", path: "/blog" },
           { name: title, path: `/blog/${slug}` },
         ]),
       ])}

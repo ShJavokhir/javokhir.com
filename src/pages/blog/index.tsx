@@ -17,14 +17,14 @@ const DESCRIPTION =
 export default function Blog({ posts }: Props) {
   return (
     <div>
-      <SEO title="Blog" description={DESCRIPTION} path="/blog" />
+      <SEO title="Writings" description={DESCRIPTION} path="/blog" />
       <BlogJsonLd posts={posts} description={DESCRIPTION} />
 
       <main className="min-h-screen bg-page-bg text-text-primary">
         <div className="mx-auto max-w-3xl px-6 py-20">
           <header className="mb-12">
             <Nav current="/blog" />
-            <h1 className="mt-6 text-4xl text-text-primary">Blog</h1>
+            <h1 className="mt-6 text-4xl text-text-primary">Writings</h1>
           </header>
 
           {posts.length === 0 ? (
