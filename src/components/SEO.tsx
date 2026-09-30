@@ -5,6 +5,7 @@ import {
   SITE_DESCRIPTION,
   TWITTER_HANDLE,
   LOCALE,
+  OG_CARD_URL,
   SEOProps,
   getFullTitle,
   getCanonicalUrl,
@@ -35,11 +36,11 @@ export function SEO({
 }: Props) {
   const fullTitle = getFullTitle(title);
   const canonicalUrl = getCanonicalUrl(path);
-  const ogImage = image || `${SITE_URL}/og-image.png`;
+  const ogImage = image || OG_CARD_URL;
   const ogImageAlt =
     imageAlt || `${SITE_NAME} — ${SITE_URL.replace("https://", "")}`;
-  // Dimensions only describe the default card; a page-supplied image may differ.
-  const isDefaultImage = !image;
+  // Dimensions only describe the generated cards; a photo may differ.
+  const isGeneratedCard = ogImage.startsWith(OG_CARD_URL);
 
   return (
     <Head>
@@ -57,7 +58,7 @@ export function SEO({
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:image" content={ogImage} />
       <meta property="og:image:alt" content={ogImageAlt} />
-      {isDefaultImage && (
+      {isGeneratedCard && (
         <>
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />

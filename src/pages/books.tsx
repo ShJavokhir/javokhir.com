@@ -18,7 +18,7 @@ interface Props {
 
 /** Shared by the meta description and the CollectionPage node. */
 const DESCRIPTION =
-  "Books Javokhir Shomuratov keeps recommending — on decision-making, selling and focus, from Annie Duke, Nassim Nicholas Taleb, Charlie Munger, Chris Voss and others.";
+  "Books Javokhir Sh. keeps recommending — on decision-making, selling and focus, from Annie Duke, Nassim Nicholas Taleb, Charlie Munger, Chris Voss and others.";
 
 function formatAuthors(authors: string[]): string {
   if (authors.length === 1) return authors[0];

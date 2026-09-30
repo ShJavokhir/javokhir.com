@@ -8,6 +8,7 @@ import {
   WEBSITE_ID,
   BLOG_ID,
   SOCIAL_LINKS,
+  OG_CARD_URL,
   toIsoMonth,
   toIsoDate,
 } from "@/lib/seo";
@@ -120,78 +121,77 @@ function collectionPage({
   };
 }
 
-interface PersonJsonLdProps {
-  name?: string;
-  url?: string;
-  jobTitle?: string;
+/** The full Person node — the homepage is the one place it's defined in full. */
+function personNode() {
+  return {
+    "@type": "Person",
+    "@id": PERSON_ID,
+    name: SITE_NAME,
+    alternateName: "Javokhir Sh.",
+    url: SITE_URL,
+    jobTitle: "Founder",
+    image: `${SITE_URL}/javokhir.jpg`,
+    email: `mailto:${EMAIL}`,
+    description: SITE_DESCRIPTION,
+    knowsAbout: [
+      "Software engineering",
+      "Startups",
+      "Product design",
+      "AI agents",
+      "Hackathons",
+    ],
+    worksFor: {
+      "@type": "Organization",
+      name: "Raisedash",
+      url: "https://raisedash.com",
+    },
+    address: {
+      "@type": "PostalAddress",
+      addressRegion: "CA",
+      addressCountry: "US",
+      addressLocality: "San Francisco Bay Area",
+    },
+    sameAs: SOCIAL_LINKS.map((link) => link.url),
+  };
 }
 
-export function PersonJsonLd({
-  name = SITE_NAME,
-  url = SITE_URL,
-  jobTitle = "Founder",
-}: PersonJsonLdProps = {}) {
+interface HomeJsonLdProps {
+  /** Newest content date on the site, YYYY-MM-DD. */
+  dateModified?: string;
+}
+
+/**
+ * The homepage is a profile of one person, which is exactly what Google's
+ * ProfilePage markup describes — it's what makes the name, photo and
+ * `sameAs` profiles eligible to be read as a single entity.
+ */
+export function HomeJsonLd({ dateModified }: HomeJsonLdProps) {
   return (
     <JsonLd
-      data={{
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "@id": PERSON_ID,
-        name,
-        alternateName: "Javokhir Sh.",
-        url,
-        jobTitle,
-        image: `${SITE_URL}/javokhir.jpg`,
-        email: `mailto:${EMAIL}`,
-        description: SITE_DESCRIPTION,
-        knowsAbout: [
-          "Software engineering",
-          "Startups",
-          "Product design",
-          "AI agents",
-          "Hackathons",
-        ],
-        worksFor: {
-          "@type": "Organization",
-          name: "Raisedash",
-          url: "https://raisedash.com",
+      data={graph([
+        personNode(),
+        {
+          "@type": "WebSite",
+          "@id": WEBSITE_ID,
+          name: SITE_NAME,
+          url: SITE_URL,
+          description: SITE_DESCRIPTION,
+          inLanguage: LOCALE,
+          publisher: { "@id": PERSON_ID },
+          author: { "@id": PERSON_ID },
         },
-        address: {
-          "@type": "PostalAddress",
-          addressRegion: "CA",
-          addressCountry: "US",
-          addressLocality: "San Francisco Bay Area",
+        {
+          "@type": "ProfilePage",
+          "@id": `${SITE_URL}/#profilepage`,
+          url: SITE_URL,
+          name: SITE_NAME,
+          description: SITE_DESCRIPTION,
+          inLanguage: LOCALE,
+          isPartOf: { "@id": WEBSITE_ID },
+          mainEntity: { "@id": PERSON_ID },
+          ...(dateModified && { dateModified }),
         },
-        sameAs: SOCIAL_LINKS.map((link) => link.url),
-      }}
-    />
-  );
-}
-
-interface WebsiteJsonLdProps {
-  name?: string;
-  url?: string;
-  description?: string;
-}
-
-export function WebsiteJsonLd({
-  name = SITE_NAME,
-  url = SITE_URL,
-  description = SITE_DESCRIPTION,
-}: WebsiteJsonLdProps = {}) {
-  return (
-    <JsonLd
-      data={{
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "@id": WEBSITE_ID,
-        name,
-        url,
-        description,
-        inLanguage: LOCALE,
-        publisher: { "@id": PERSON_ID },
-        author: { "@id": PERSON_ID },
-      }}
+      ])}
     />
   );
 }
@@ -461,7 +461,7 @@ export function BlogPostJsonLd({
   description,
   publishedTime,
   slug,
-  image = `${SITE_URL}/og-image.png`,
+  image = OG_CARD_URL,
 }: BlogPostJsonLdProps) {
   const url = `${SITE_URL}/blog/${slug}`;
   const datePublished = toIsoDate(publishedTime);

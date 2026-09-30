@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Nav } from "@/components/Nav";
 import { SEO } from "@/components/SEO";
 import { ProjectsJsonLd } from "@/components/JsonLd";
-import { outboundRel, toIsoMonth } from "@/lib/seo";
+import { SITE_URL, outboundRel, toIsoMonth } from "@/lib/seo";
 import projectsData from "../../content/projects.json";
 
 interface Screenshot {
@@ -30,7 +30,7 @@ interface Props {
 
 /** Shared by the meta description and the CollectionPage node. */
 const DESCRIPTION =
-  "Projects built by Javokhir Shomuratov — YC World, Y Combinator as a city you can walk, YC Atlas, GoldCall, Quant Alpha, joinedanthropic.com, startups.rip and more.";
+  "Projects built by Javokhir Sh. — YC World, Y Combinator as a city you can walk, YC Atlas, GoldCall, Quant Alpha, joinedanthropic.com, startups.rip and more.";
 
 function formatList(names: string[]): string {
   if (names.length === 1) return names[0];
@@ -127,7 +127,13 @@ function ProjectEntry({ project, first }: { project: Project; first: boolean }) 
 export default function Projects({ projects }: Props) {
   return (
     <div>
-      <SEO title="Projects" description={DESCRIPTION} path="/projects" />
+      <SEO
+        title="Projects"
+        description={DESCRIPTION}
+        path="/projects"
+        image={`${SITE_URL}/projects/og-projects.jpg`}
+        imageAlt="YC World by Javokhir Sh. — every Y Combinator company as a building in a 3D city"
+      />
       <ProjectsJsonLd projects={projects} description={DESCRIPTION} />
 
       <main className="min-h-screen bg-page-bg text-text-primary">

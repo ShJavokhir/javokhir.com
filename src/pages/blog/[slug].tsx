@@ -4,7 +4,7 @@ import { getAllSlugs, getPostBySlug, Post } from "@/lib/blog";
 import { Nav } from "@/components/Nav";
 import { SEO } from "@/components/SEO";
 import { BlogPostJsonLd } from "@/components/JsonLd";
-import { SITE_DESCRIPTION, formatDisplayDate } from "@/lib/seo";
+import { SITE_DESCRIPTION, SITE_NAME, formatDisplayDate, postCardUrl } from "@/lib/seo";
 
 interface Props {
   post: Post;
@@ -19,12 +19,15 @@ export default function BlogPost({ post }: Props) {
         path={`/blog/${post.slug}`}
         type="article"
         publishedTime={post.date}
+        image={postCardUrl(post.slug)}
+        imageAlt={`${post.title} — Writings by ${SITE_NAME}`}
       />
       <BlogPostJsonLd
         title={post.title}
         description={post.description}
         publishedTime={post.date}
         slug={post.slug}
+        image={postCardUrl(post.slug)}
       />
 
       <main className="min-h-screen bg-page-bg text-text-primary">

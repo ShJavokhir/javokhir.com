@@ -1,8 +1,10 @@
+import { GetStaticProps } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Nav } from "@/components/Nav";
 import { SEO } from "@/components/SEO";
-import { PersonJsonLd, WebsiteJsonLd } from "@/components/JsonLd";
+import { HomeJsonLd } from "@/components/JsonLd";
+import { getLastModified } from "@/lib/lastmod";
 import { EMAIL, SOCIAL_LINKS } from "@/lib/seo";
 
 const linkClass =
@@ -19,12 +21,15 @@ function Item({ children }: { children: React.ReactNode }) {
   );
 }
 
-export default function Home() {
+interface Props {
+  dateModified: string | null;
+}
+
+export default function Home({ dateModified }: Props) {
   return (
     <div>
       <SEO path="" />
-      <PersonJsonLd />
-      <WebsiteJsonLd />
+      <HomeJsonLd dateModified={dateModified ?? undefined} />
 
       <main className="min-h-screen bg-page-bg text-text-primary">
         <div className="mx-auto max-w-3xl px-6 py-20">
@@ -33,7 +38,7 @@ export default function Home() {
             <div className="mt-8 flex items-center gap-5">
               <Image
                 src="/javokhir.jpg"
-                alt="Javokhir Shomuratov"
+                alt="Javokhir Sh."
                 width={640}
                 height={640}
                 sizes="80px"
@@ -46,29 +51,24 @@ export default function Home() {
 
           <ul className="mt-10 space-y-3 text-lg leading-relaxed text-text-body">
             <Item>10+ years in tech, based in the SF Bay Area</Item>
+            <Item>All in on entrepreneurship</Item>
             <Item>
               I design complex, scalable architectures, and I&apos;m a little
               addicted to getting the UI/UX right
             </Item>
             <Item>
-              Founder mindset, generalist by choice. I never picked one thing to
-              be forever. When something new matters, I go all the way in until
-              I can actually do it &mdash; staying unlocked is the plan.
-            </Item>
-            <Item>
               <Link href="/awards" className={linkClass}>
-                13x hackathon / coding contest winner
+                14x hackathon / coding contest winner
               </Link>{" "}
-              <span aria-hidden>&#127941;</span>{" "}
-              (I still think the role of luck is huge and anyone can do it)
+              <span aria-hidden>&#127941;</span>
             </Item>
-            <Item>W2 history? 3 months at a fast food restaurant</Item>
             <Item>
               Part-time ethical hacker &mdash; found a real vuln at a US public
               company
             </Item>
             <Item>
-              I like reverse-engineering how successful people actually got there
+              I like reverse-engineering how successful people actually got
+              there
             </Item>
             <Item>
               <Link href="/books" className={linkClass}>
@@ -76,35 +76,64 @@ export default function Home() {
               </Link>{" "}
               Thinking in Bets, The Mom Test, SPIN Selling
             </Item>
-            <Item>Hobby? canyon drives, sim racing, hiking, cooking, audiobooks</Item>
-            <Item>&ldquo;Car guy&rdquo; (812, 296 GTB, SF90 XX, Senna, GT3 RS)</Item>
+            <Item>
+              Hobby? canyon drives, sim racing, hiking, cooking, audiobooks
+            </Item>
           </ul>
 
-          <footer className="mt-14 border-t border-link-underline/40 pt-8">
-            <p className="text-text-body">
-              Reach me at{" "}
-              <a href={`mailto:${EMAIL}`} className={linkClass}>
-                {EMAIL}
+          <aside className="mt-12 rounded-md border border-link-underline/40 bg-card-surface px-6 py-5">
+            <h2 className="text-xs uppercase tracking-widest text-text-muted">
+              Fun fact
+            </h2>
+            <p className="mt-2 leading-relaxed text-text-body">
+              I was born in Khorezm, the same small region as{" "}
+              <a
+                href="https://en.wikipedia.org/wiki/Al-Khwarizmi"
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+                className={linkClass}
+              >
+                Al-Khwarizmi
               </a>
-              .
+              , the father of algebra. He popularized the numerals we use today,
+              and the word &ldquo;algorithm&rdquo; comes from his name.
             </p>
-            <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm">
-              {SOCIAL_LINKS.map(({ label, url }) => (
-                <li key={label}>
-                  <a
-                    href={url}
-                    target="_blank"
-                    rel="me noreferrer"
-                    className="text-text-muted underline decoration-transparent underline-offset-4 transition hover:text-text-body hover:decoration-link-underline"
-                  >
-                    {label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          </aside>
+
+          <footer className="mt-14 border-t border-link-underline/40 pt-8">
+            <div className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-3">
+              <p className="text-text-body">
+                Reach me at{" "}
+                <a href={`mailto:${EMAIL}`} className={linkClass}>
+                  {EMAIL}
+                </a>
+                .
+              </p>
+              <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
+                {SOCIAL_LINKS.map(({ label, url }) => (
+                  <li key={label}>
+                    <a
+                      href={url}
+                      target="_blank"
+                      rel="me noreferrer"
+                      className="text-text-muted underline decoration-transparent underline-offset-4 transition hover:text-text-body hover:decoration-link-underline"
+                    >
+                      {label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </footer>
         </div>
       </main>
     </div>
   );
 }
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  return {
+    // `undefined` isn't serializable as a prop.
+    props: { dateModified: getLastModified()[""] ?? null },
+  };
+};

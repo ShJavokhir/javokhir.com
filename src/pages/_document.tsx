@@ -1,5 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import { SITE_URL } from "@/lib/seo";
+import { SITE_URL, SITE_NAME, RSS_PATH } from "@/lib/seo";
 
 const themeScript = `
   (function() {
@@ -16,11 +16,16 @@ export default function Document() {
   return (
     <Html lang="en" suppressHydrationWarning>
       <Head>
-        <meta charSet="utf-8" />
         <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title={`Writings — ${SITE_NAME}`}
+          href={`${SITE_URL}${RSS_PATH}`}
+        />
         <script
           defer
           src="/stats/script.js"

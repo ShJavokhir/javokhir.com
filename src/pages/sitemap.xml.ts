@@ -1,21 +1,17 @@
 import { GetServerSideProps } from "next";
 import { getAllPosts } from "@/lib/blog";
-import { SITE_URL, SECTIONS, latestIsoDate } from "@/lib/seo";
+import { getLastModified } from "@/lib/lastmod";
+import { SITE_URL, SECTIONS } from "@/lib/seo";
 import awardsData from "../../content/awards.json";
 import projectsData from "../../content/projects.json";
-import quotesData from "../../content/quotes.json";
 
-/** Just the fields the sitemap cares about, across all three content files. */
+/** Just the fields the sitemap cares about. */
 interface ContentItem {
-  date?: string;
-  period?: string;
-  addedDate?: string;
   images?: { src: string }[];
 }
 
 const awards = awardsData as ContentItem[];
 const projects = projectsData as ContentItem[];
-const quotes = quotesData as ContentItem[];
 
 interface UrlEntry {
   path: string;
@@ -60,23 +56,7 @@ function renderUrl({ path, changefreq, priority, lastmod, images }: UrlEntry) {
 }
 
 function generateSitemap(posts: { slug: string; date: string }[]): string {
-  const postDates = posts.map((post) => post.date);
-
-  /**
-   * `lastmod` comes from the content itself rather than the build, so a
-   * redeploy that changes nothing doesn't tell crawlers everything changed.
-   */
-  const lastmodByPath: Record<string, string | undefined> = {
-    "": latestIsoDate([
-      ...postDates,
-      ...awards.map((award) => award.date),
-      ...projects.map((project) => project.period),
-    ]),
-    "/awards": latestIsoDate(awards.map((award) => award.date)),
-    "/projects": latestIsoDate(projects.map((project) => project.period)),
-    "/blog": latestIsoDate(postDates),
-    "/quotes": latestIsoDate(quotes.map((quote) => quote.addedDate)),
-  };
+  const lastmodByPath = getLastModified();
 
   const imagesByPath: Record<string, string[] | undefined> = {
     "/awards": imageUrls(awards),

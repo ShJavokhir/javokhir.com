@@ -18,6 +18,13 @@ interface Link {
   url: string;
 }
 
+interface Brand {
+  name: string;
+  domain: string;
+  logoId?: string;
+  background?: "dark";
+}
+
 interface Award {
   name: string;
   /** Human-readable result, e.g. "1st place" or "Datadog track winner". */
@@ -25,6 +32,7 @@ interface Award {
   /** Decorative medal for the placement; the text above carries the meaning. */
   medal: string;
   issuer: string;
+  brands?: Brand[];
   date: string;
   /** What we shipped there, when the project has a name worth naming. */
   project?: string;
@@ -41,10 +49,11 @@ interface Props {
 
 /** Shared by the meta description and the CollectionPage node. */
 const DESCRIPTION =
-  "Hackathon wins by Javokhir Shomuratov — 1st place at Y Combinator, OdysseyML, MongoDB and Docker/Groq/E2B, plus 2nd worldwide at the Global Best M-Gov Award.";
+  "Hackathon awards by Javokhir Sh. — 1st place at Y Combinator, OdysseyML and MongoDB; 2nd place at Clerk's Next.js Conf opening hackathon.";
 
 const linkClass =
   "underline decoration-link-underline/70 underline-offset-4 transition hover:decoration-link-underline-hover";
+const LOGO_DEV_TOKEN = "pk_CgimGrkSQpy_qPhm1dortQ";
 
 function formatList(names: string[]): string {
   if (names.length === 1) return names[0];
@@ -85,6 +94,40 @@ function Photos({
   );
 }
 
+function BrandLogos({ brands }: { brands: Brand[] }) {
+  return (
+    <ul
+      className="mt-3 flex flex-wrap gap-2"
+      aria-label="Organizations involved in the event"
+    >
+      {brands.map((brand) => {
+        const url = `https://${brand.domain}`;
+        return (
+          <li key={brand.domain}>
+            <a
+              href={url}
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+              title={brand.name}
+              aria-label={brand.name}
+              className="block rounded-lg ring-1 ring-link-underline/40 transition hover:ring-link-underline-hover"
+            >
+              <Image
+                src={`https://img.logo.dev/${brand.logoId ?? brand.domain}?token=${LOGO_DEV_TOKEN}&size=80&format=webp`}
+                alt=""
+                width={40}
+                height={40}
+                unoptimized
+                className={`h-10 w-10 rounded-lg object-contain p-1 ${brand.background === "dark" ? "bg-slate-900" : "bg-white"}`}
+              />
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
+
 function AwardEntry({ award, first }: { award: Award; first: boolean }) {
   const isoDate = toIsoMonth(award.date);
 
@@ -108,6 +151,10 @@ function AwardEntry({ award, first }: { award: Award; first: boolean }) {
         {award.placement}
         <span className="text-text-muted"> &middot; {award.issuer}</span>
       </p>
+
+      {award.brands && award.brands.length > 0 && (
+        <BrandLogos brands={award.brands} />
+      )}
 
       {(award.project || award.note) && (
         <p className="mt-2 text-text-body">
@@ -154,7 +201,7 @@ export default function Awards({ awards }: Props) {
         description={DESCRIPTION}
         path="/awards"
         image={`${SITE_URL}/awards/og-awards.jpg`}
-        imageAlt="Javokhir Shomuratov and his team after winning HackTheStackathon at Y Combinator"
+        imageAlt="Javokhir Sh. and his team after winning HackTheStackathon at Y Combinator"
       />
       <AwardsJsonLd awards={awards} description={DESCRIPTION} />
 
@@ -164,7 +211,7 @@ export default function Awards({ awards }: Props) {
             <Nav current="/awards" />
             <h1 className="mt-6 text-4xl text-text-primary">Awards</h1>
             <p className="mt-3 text-text-muted">
-              13x hackathon / coding contest winner. I still think the role of luck is huge
+              14x hackathon / coding contest winner. I still think the role of luck is huge
               and anyone can do it. The recent ones:
             </p>
           </header>
@@ -176,6 +223,17 @@ export default function Awards({ awards }: Props) {
               </li>
             ))}
           </ul>
+          <p className="mt-12 text-xs text-text-muted">
+            Company logos via{" "}
+            <a
+              href="https://logo.dev"
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+              className={linkClass}
+            >
+              Logo.dev
+            </a>
+          </p>
         </div>
       </main>
     </div>

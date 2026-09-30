@@ -1,10 +1,17 @@
 export const SITE_URL = "https://javokhir.com";
-export const SITE_NAME = "Javokhir Shomuratov";
+export const SITE_NAME = "Javokhir Sh.";
 export const SITE_DESCRIPTION =
-  "Founder at Raisedash. 10+ years in tech, based in the SF Bay Area. Generalist by choice, 13x hackathon winner.";
+  "Founder at Raisedash. 10+ years in tech, based in the SF Bay Area. Generalist by choice, 14x hackathon winner.";
 export const TWITTER_HANDLE = "@_javokhir";
 export const EMAIL = "hi@javokhir.com";
 export const LOCALE = "en-US";
+/** Generated social cards (`src/pages/api/og.tsx`), always 1200x630 PNG. */
+export const OG_CARD_URL = `${SITE_URL}/api/og`;
+export function postCardUrl(slug: string): string {
+  return `${OG_CARD_URL}?post=${encodeURIComponent(slug)}`;
+}
+/** Served by `src/pages/rss.xml.ts`, advertised site-wide from `_document.tsx`. */
+export const RSS_PATH = "/rss.xml";
 
 /** Stable node ids so every page's JSON-LD describes the same entities. */
 export const PERSON_ID = `${SITE_URL}/#person`;
@@ -59,14 +66,14 @@ export const SECTIONS: Section[] = [
   },
   {
     href: "/books",
-    label: "Books",
+    label: "Favorite books",
     group: "more",
     changefreq: "monthly",
     priority: "0.5",
   },
   {
     href: "/quotes",
-    label: "Quotes",
+    label: "Favorite quotes",
     group: "more",
     changefreq: "monthly",
     priority: "0.5",

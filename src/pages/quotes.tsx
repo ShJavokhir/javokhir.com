@@ -18,7 +18,7 @@ interface Props {
 
 /** Shared by the meta description and the CollectionPage node. */
 const DESCRIPTION =
-  "Quotes Javokhir Shomuratov keeps coming back to — on business, storytelling and decision-making, from Naval Ravikant, Charlie Munger, Alfred Adler and others.";
+  "Quotes Javokhir Sh. keeps coming back to — on business, storytelling and decision-making, from Naval Ravikant, Charlie Munger, Alfred Adler and others.";
 
 export default function Quotes({ quotes }: Props) {
   const [selectedAuthor, setSelectedAuthor] = useState<string | null>(null);

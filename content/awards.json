@@ -3,19 +3,37 @@
     "name": "HackTheStackathon @ Y Combinator",
     "placement": "1st place",
     "medal": "🥇",
-    "issuer": "YC, Firecrawl, Resend, Reducto",
+    "issuer": "Firecrawl, Resend & Reducto at Y Combinator",
+    "brands": [
+      { "name": "Y Combinator", "domain": "ycombinator.com" },
+      { "name": "MongoDB", "domain": "mongodb.com" },
+      { "name": "Supabase", "domain": "supabase.com" },
+      { "name": "Resend", "domain": "resend.com" },
+      { "name": "ElevenLabs", "domain": "elevenlabs.io" },
+      { "name": "Algolia", "domain": "algolia.com" },
+      { "name": "Firecrawl", "domain": "firecrawl.dev" },
+      { "name": "Reducto", "domain": "reducto.ai" },
+      { "name": "Lovable", "domain": "lovable.dev" },
+      { "name": "Mux", "domain": "mux.com" },
+      { "name": "OpenRouter", "domain": "openrouter.ai" }
+    ],
     "date": "Feb 2026",
+    "project": "Bake-off",
     "team": ["Mark Morgan", "Oscar Hong"],
     "links": [
       {
         "label": "Winners announcement",
         "url": "https://www.youtube.com/watch?v=AUtREYLx9IA"
+      },
+      {
+        "label": "Event details",
+        "url": "https://www.linkedin.com/posts/markrussellmercer_i-couldnt-be-more-excited-for-this-event-activity-7417622330228785152-k-54"
       }
     ],
     "images": [
       {
         "src": "/awards/hackthestackathon-yc-winners.webp",
-        "alt": "Javokhir Shomuratov with teammates Mark Morgan and Oscar Hong in front of the Y Combinator sign after winning HackTheStackathon",
+        "alt": "Javokhir Sh. with teammates Mark Morgan and Oscar Hong in front of the Y Combinator sign after winning HackTheStackathon",
         "width": 1280,
         "height": 918
       }
@@ -26,19 +44,23 @@
     "placement": "1st place",
     "medal": "🥇",
     "issuer": "OdysseyML",
+    "brands": [
+      { "name": "AWS", "domain": "aws.amazon.com", "logoId": "name/AWS" },
+      { "name": "OdysseyML", "domain": "odyssey.ml" }
+    ],
     "date": "Feb 2026",
     "team": ["Oscar Hong", "Mark Morgan"],
-    "links": [{ "label": "odyssey.ml", "url": "https://odyssey.ml" }],
+    "links": [{ "label": "Event page", "url": "https://luma.com/xt4k5374" }],
     "images": [
       {
         "src": "/awards/odyssey-2-pro-odysseyml-team.webp",
-        "alt": "Javokhir Shomuratov and teammates holding the $25,000 Odyssey-2 Pro Hackathon winners' check with the OdysseyML team — Soleio, Oliver Cameron and Kristy McDonough",
+        "alt": "Javokhir Sh. and teammates holding the $25,000 Odyssey-2 Pro Hackathon winners' check with the OdysseyML team — Soleio, Oliver Cameron and Kristy McDonough",
         "width": 1400,
         "height": 933
       },
       {
         "src": "/awards/odyssey-2-pro-team.webp",
-        "alt": "Oscar Hong, Mark Morgan and Javokhir Shomuratov holding the $25,000 Odyssey-2 Pro Hackathon winners' check in Menlo Park",
+        "alt": "Oscar Hong, Mark Morgan and Javokhir Sh. holding the $25,000 Odyssey-2 Pro Hackathon winners' check in Menlo Park",
         "width": 720,
         "height": 1280
       }
@@ -48,15 +70,28 @@
     "name": "MongoDB Agentic Orchestration Hackathon",
     "placement": "1st place",
     "medal": "🥇",
-    "issuer": "MongoDB, NVIDIA, Vercel, Fireworks AI, Coinbase, Thesys, Augment Code",
+    "issuer": "MongoDB",
+    "brands": [
+      { "name": "NVIDIA", "domain": "nvidia.com" },
+      { "name": "MongoDB", "domain": "mongodb.com" },
+      { "name": "Coinbase", "domain": "coinbase.com" },
+      { "name": "Vercel", "domain": "vercel.com" },
+      { "name": "Fireworks AI", "domain": "fireworks.ai" },
+      { "name": "Cerebral Valley", "domain": "cerebralvalley.ai" },
+      { "name": "Augment Code", "domain": "augmentcode.com" },
+      { "name": "Voyage AI", "domain": "voyageai.com" },
+      { "name": "Galileo", "domain": "galileo.ai" },
+      { "name": "Thesys", "domain": "thesys.dev" }
+    ],
     "date": "Jan 2026",
     "project": "JustPrice",
     "note": "Announced by MongoDB x Cerebral Valley.",
     "team": ["Oscar Hong"],
+    "links": [{ "label": "Event page", "url": "https://cerebralvalley.ai/e/agentic-orchestration-hackathon" }],
     "images": [
       {
         "src": "/awards/mongodb-hackathon-winners.webp",
-        "alt": "Oscar Hong and Javokhir Shomuratov holding their trophies as MongoDB x Cerebral Valley hackathon winners with JustPrice",
+        "alt": "Oscar Hong and Javokhir Sh. holding their trophies as MongoDB x Cerebral Valley hackathon winners with JustPrice",
         "width": 1064,
         "height": 1280
       },
@@ -72,21 +107,42 @@
     "name": "AgentMail's HackHalloween",
     "placement": "1st in the Summoners track, 3rd grand prize",
     "medal": "🥇",
-    "issuer": "Y Combinator & AgentMail",
+    "issuer": "AgentMail at Y Combinator",
+    "brands": [
+      { "name": "Y Combinator", "domain": "ycombinator.com" },
+      { "name": "OpenAI", "domain": "openai.com" },
+      { "name": "AWS", "domain": "aws.amazon.com", "logoId": "name/AWS" },
+      { "name": "Replit", "domain": "replit.com" },
+      { "name": "Perplexity", "domain": "perplexity.ai" },
+      { "name": "LiveKit", "domain": "livekit.io" },
+      { "name": "AgentMail", "domain": "agentmail.to" },
+      { "name": "Convex", "domain": "convex.dev" },
+      { "name": "Browser Use", "domain": "browser-use.com" },
+      { "name": "Composio", "domain": "composio.dev" },
+      { "name": "Mastra", "domain": "mastra.ai" },
+      { "name": "Moss", "domain": "moss.dev", "logoId": "name/Moss" },
+      { "name": "Hyperspell", "domain": "hyperspell.com" }
+    ],
     "date": "Nov 2025",
     "project": "startups.rip",
     "team": ["Oscar Hong", "Alessandro Duico", "Sai Krishna"],
-    "links": [{ "label": "startups.rip", "url": "https://startups.rip" }],
+    "links": [
+      { "label": "startups.rip", "url": "https://startups.rip" },
+      {
+        "label": "Organizer recap",
+        "url": "https://www.linkedin.com/posts/agentmailto_200-hackers-24-hours-over-100k-in-prizes-activity-7391544491804942337-OwCi"
+      }
+    ],
     "images": [
       {
         "src": "/awards/hackhalloween-team.webp",
-        "alt": "Oscar Hong, Javokhir Shomuratov and Alessandro Duico building startups.rip at AgentMail's HackHalloween",
+        "alt": "Oscar Hong, Javokhir Sh. and Alessandro Duico building startups.rip at AgentMail's HackHalloween",
         "width": 1400,
         "height": 1050
       },
       {
         "src": "/awards/hackhalloween-track-winner-trophy.webp",
-        "alt": "Alessandro Duico, Oscar Hong, Sai Krishna and Javokhir Shomuratov holding the AgentMail Summoners track winner trophy at Y Combinator",
+        "alt": "Alessandro Duico, Oscar Hong, Sai Krishna and Javokhir Sh. holding the AgentMail Summoners track winner trophy at Y Combinator",
         "width": 1400,
         "height": 1050
       }
@@ -97,6 +153,11 @@
     "placement": "1st place",
     "medal": "🥇",
     "issuer": "Docker, Groq & E2B",
+    "brands": [
+      { "name": "Docker", "domain": "docker.com" },
+      { "name": "Groq", "domain": "groq.com" },
+      { "name": "E2B", "domain": "e2b.dev" }
+    ],
     "date": "Nov 2025",
     "project": "PatentsWithCode",
     "team": ["Oscar Hong", "Julaiti Alafate"],
@@ -104,7 +165,7 @@
     "images": [
       {
         "src": "/awards/build-mcp-agents-team.webp",
-        "alt": "Javokhir Shomuratov, Oscar Hong and Julaiti Alafate, the PatentsWithCode team at the Build MCP Agents hackathon",
+        "alt": "Javokhir Sh., Oscar Hong and Julaiti Alafate, the PatentsWithCode team at the Build MCP Agents hackathon",
         "width": 720,
         "height": 1280
       }
@@ -114,19 +175,30 @@
     "name": "Hack FLUX: Beyond One",
     "placement": "2nd place",
     "medal": "🥈",
-    "issuer": "Black Forest Labs, NVIDIA, fal.ai, Anthropic",
+    "issuer": "Black Forest Labs & fal.ai",
+    "brands": [
+      { "name": "NVIDIA", "domain": "nvidia.com" },
+      { "name": "Anthropic", "domain": "anthropic.com" },
+      { "name": "Vercel", "domain": "vercel.com" },
+      { "name": "DigitalOcean", "domain": "digitalocean.com", "background": "dark" },
+      { "name": "Black Forest Labs", "domain": "bfl.ai" },
+      { "name": "fal.ai", "domain": "fal.ai" },
+      { "name": "Cerebral Valley", "domain": "cerebralvalley.ai" },
+      { "name": "Mintlify", "domain": "mintlify.com" }
+    ],
     "date": "Nov 2025",
     "team": ["Oscar Hong", "Julaiti Alafate"],
+    "links": [{ "label": "Event page", "url": "https://cerebralvalley.ai/e/bfl-hackathon" }],
     "images": [
       {
         "src": "/awards/hack-flux-fal-ceo.webp",
-        "alt": "Oscar Hong and Javokhir Shomuratov with Burkay Gur, co-founder and CEO of fal.ai, at Hack FLUX: Beyond One",
+        "alt": "Oscar Hong and Javokhir Sh. with Burkay Gur, co-founder and CEO of fal.ai, at Hack FLUX: Beyond One",
         "width": 1400,
         "height": 788
       },
       {
         "src": "/awards/hack-flux-organizers.webp",
-        "alt": "Javokhir Shomuratov and his team with the Hack FLUX: Beyond One organizers in front of the Black Forest Labs stage",
+        "alt": "Javokhir Sh. and his team with the Hack FLUX: Beyond One organizers in front of the Black Forest Labs stage",
         "width": 1400,
         "height": 935
       }
@@ -137,13 +209,42 @@
     "placement": "Datadog track winner",
     "medal": "🏆",
     "issuer": "Datadog",
+    "brands": [
+      { "name": "Figma", "domain": "figma.com" },
+      { "name": "Snap", "domain": "snap.com", "logoId": "snapchat.com" },
+      { "name": "Supabase", "domain": "supabase.com" },
+      { "name": "Datadog", "domain": "datadoghq.com" },
+      { "name": "Resend", "domain": "resend.com" }
+    ],
+    "date": "Oct 2025",
+    "team": ["Mark Morgan", "Oscar Hong"],
+    "links": [{ "label": "Event page", "url": "https://luma.com/1ygcx99w" }],
+    "images": [
+      {
+        "src": "/awards/supabase-select-datadog-track.webp",
+        "alt": "Javokhir Sh. with teammates Mark Morgan and Oscar Hong, and Maxi Rodriguez of Datadog, after winning the Datadog track at Supabase Select 2025",
+        "width": 720,
+        "height": 1280
+      }
+    ]
+  },
+  {
+    "name": "Official Next.js Conf Opening Hackathon by Clerk",
+    "placement": "2nd place",
+    "medal": "🥈",
+    "issuer": "Clerk & CodeTV",
+    "brands": [
+      { "name": "Clerk", "domain": "clerk.com" },
+      { "name": "Keychron", "domain": "keychron.com" },
+      { "name": "CodeTV", "domain": "codetv.dev" }
+    ],
     "date": "Oct 2025",
     "team": ["Mark Morgan", "Oscar Hong"],
     "images": [
       {
-        "src": "/awards/supabase-select-datadog-track.webp",
-        "alt": "Javokhir Shomuratov with teammates Mark Morgan and Oscar Hong, and Maxi Rodriguez of Datadog, after winning the Datadog track at Supabase Select 2025",
-        "width": 720,
+        "src": "/awards/nextjs-conf-clerk-post.webp",
+        "alt": "Clerk's X post congratulating the Next.js Conf hackathon winners, with Javokhir Sh., Mark Morgan and Oscar Hong pictured holding the second-place Keychron keyboards",
+        "width": 1106,
         "height": 1280
       }
     ]

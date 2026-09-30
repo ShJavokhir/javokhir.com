@@ -12,7 +12,7 @@ interface Props {
 
 /** Shared by the meta description and the Blog node. */
 const DESCRIPTION =
-  "Writing by Javokhir Shomuratov on building products, engineering and security — including a first-hand account of the React2Shell (CVE-2025-55182) incident.";
+  "Writing by Javokhir Sh. on building products, engineering and security — including a first-hand account of the React2Shell (CVE-2025-55182) incident.";
 
 export default function Blog({ posts }: Props) {
   return (

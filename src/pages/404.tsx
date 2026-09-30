@@ -6,7 +6,7 @@ export default function NotFound() {
   return (
     <div>
       <Head>
-        <title>Page not found — Javokhir Shomuratov</title>
+        <title>Page not found — Javokhir Sh.</title>
         <meta name="robots" content="noindex" />
       </Head>
 
